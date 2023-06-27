@@ -9,18 +9,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { RadioButton } from "react-native-paper";
-// import DropDownPicker from "react-native-dropdown-picker";
 import { Dropdown } from "react-native-element-dropdown";
 import { useContext } from "react";
 import { MyStoreContext } from "../Context/MyStoreContext";
-// import {route } from 'react-'
 
 export const DetailsScreen = ({ route, navigation }) => {
   const { gender, setGender, age, setAge, categoryType, setCategoryType } =
     useContext(MyStoreContext);
 
   console.log(route.params.message);
-  const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const genderList = [
     { label: "Male", value: "male" },

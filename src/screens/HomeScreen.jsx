@@ -89,7 +89,7 @@ export const HomeScreen = ({ navigation }) => {
         {/* Fourth Block -----: */}
 
         <View className="my-3 flex-row gap-x-3">
-          <Pressable
+          <TouchableOpacity
             onPress={() => navigation.navigate("Clinical Treatment")}
             className="h-24 w-[30%] rounded-md border border-gray-200"
           >
@@ -104,9 +104,9 @@ export const HomeScreen = ({ navigation }) => {
                 Clinical Treatment
               </Text>
             </View>
-          </Pressable>
+          </TouchableOpacity>
 
-          <Pressable
+          <TouchableOpacity
             onPress={() => navigation.navigate("Psychological Counselling")}
             className="h-24 w-[30%] rounded-md border border-gray-200"
           >
@@ -121,9 +121,9 @@ export const HomeScreen = ({ navigation }) => {
                 Psychological Counselling
               </Text>
             </View>
-          </Pressable>
+          </TouchableOpacity>
 
-          <Pressable
+          <TouchableOpacity
             onPress={() => navigation.navigate("Mindfulness")}
             className="h-24 w-[30%] rounded-md border border-gray-200"
           >
@@ -138,7 +138,7 @@ export const HomeScreen = ({ navigation }) => {
                 Mindfulness
               </Text>
             </View>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
     </>

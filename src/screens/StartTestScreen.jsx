@@ -64,7 +64,7 @@ export const StartTestScreen = ({ navigation }) => {
 
           <TouchableOpacity
             onPress={() => setSelectedCategory("profession")}
-            className="w-[41%] rounded-lg border border-slate-300 bg-white "
+            className="w-[41%] rounded-lg border border-slate-300 bg-white"
           >
             <View className="items-center py-2">
               <Image

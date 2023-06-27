@@ -1,10 +1,57 @@
 import { useCallback, useState } from "react";
 import {
+  femaleAdultsEthics,
+  femaleAdultsHealth,
+  femaleAdultsPersonal,
+  femaleAdultsProfession,
+  femaleAdultsSurrounding,
+  femaleMiddleAgeEthics,
+  femaleMiddleAgeHealth,
+  femaleMiddleAgePersonal,
+  femaleMiddleAgeProfession,
+  femaleMiddleAgeSurrounding,
+  femaleOldAgeEthics,
+  femaleOldAgeHealth,
+  femaleOldAgePersonal,
+  femaleOldAgeProfession,
+  femaleOldAgeSurrounding,
+  femaleUnderSeventeenEthics,
+  femaleUnderSeventeenHealth,
+  femaleUnderSeventeenPersonal,
+  femaleUnderSeventeenProfession,
+  femaleUnderSeventeenSurrounding,
+  femaleYoungAdultsEthics,
+  femaleYoungAdultsHealth,
+  femaleYoungAdultsPersonal,
+  femaleYoungAdultsProfession,
+  femaleYoungAdultsSurrounding,
+  maleAdultsEthics,
+  maleAdultsHealth,
+  maleAdultsPersonal,
+  maleAdultsProfession,
+  maleAdultsSurrounding,
+  maleMiddleAgeEthics,
+  maleMiddleAgeHealth,
+  maleMiddleAgePersonal,
+  maleMiddleAgeProfession,
+  maleMiddleAgeSurrounding,
+  maleOldAgeEthics,
+  maleOldAgeHealth,
+  maleOldAgePersonal,
+  maleOldAgeProfession,
+  maleOldAgeSurrounding,
+  maleUnderSeventeenEthics,
+  maleUnderSeventeenHealth,
   maleUnderSeventeenPersonal,
   maleUnderSeventeenProfession,
   maleUnderSeventeenSurrounding,
+  maleYoungAdultsEthics,
+  maleYoungAdultsHealth,
+  maleYoungAdultsPersonal,
+  maleYoungAdultsProfession,
+  maleYoungAdultsSurrounding,
 } from "../utils";
-import Result from "./ResultScreen";
+import { Result } from "./ResultScreen";
 import { QuestionsScreen } from "./QuestionsScreen";
 import { Button } from "react-native-paper";
 import { TouchableOpacity, View } from "react-native";
@@ -13,20 +60,9 @@ import { useContext } from "react";
 import { MyStoreContext } from "../Context/MyStoreContext";
 
 export default function QuestionsAndResult({ navigation }) {
-  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
-  const { title, questionImage, options, question } =
-    maleUnderSeventeenPersonal[activeQuestionIndex] ?? {};
-  const [activeAnswerIndex, setActiveAnswerIndex] = useState(undefined);
-
-  const { answersGiven, setAnswersGiven } = useAnswerGivenContext();
-
   const { gender, setGender, age, setAge, categoryType, setCategoryType } =
     useContext(MyStoreContext);
-
-  console.log(age, gender, categoryType);
-
   let questions;
-
   if (age === "under 17" && gender === "male" && categoryType === "personal") {
     questions = maleUnderSeventeenPersonal;
   } else if (
@@ -41,11 +77,298 @@ export default function QuestionsAndResult({ navigation }) {
     categoryType === "surrounding"
   ) {
     questions = maleUnderSeventeenSurrounding;
+  } else if (
+    age === "under 17" &&
+    gender === "male" &&
+    categoryType === "health"
+  ) {
+    questions = maleUnderSeventeenHealth;
+  } else if (
+    age === "under 17" &&
+    gender === "male" &&
+    categoryType === "ethics"
+  ) {
+    questions = maleUnderSeventeenEthics;
+  } else if (
+    age === "under 17" &&
+    gender === "female" &&
+    categoryType === "personal"
+  ) {
+    questions = femaleUnderSeventeenPersonal;
+  } else if (
+    age === "under 17" &&
+    gender === "female" &&
+    categoryType === "profession"
+  ) {
+    questions = femaleUnderSeventeenProfession;
+  } else if (
+    age === "under 17" &&
+    gender === "female" &&
+    categoryType === "surrounding"
+  ) {
+    questions = femaleUnderSeventeenSurrounding;
+  } else if (
+    age === "under 17" &&
+    gender === "female" &&
+    categoryType === "health"
+  ) {
+    questions = femaleUnderSeventeenHealth;
+  } else if (
+    age === "under 17" &&
+    gender === "female" &&
+    categoryType === "ethics"
+  ) {
+    questions = femaleUnderSeventeenEthics;
+  } else if (
+    age === "young adults" &&
+    gender === "male" &&
+    categoryType === "personal"
+  ) {
+    questions = maleYoungAdultsPersonal;
+  } else if (
+    age === "young adults" &&
+    gender === "male" &&
+    categoryType === "profession"
+  ) {
+    questions = maleYoungAdultsProfession;
+  } else if (
+    age === "young adults" &&
+    gender === "male" &&
+    categoryType === "surrounding"
+  ) {
+    questions = maleYoungAdultsSurrounding;
+  } else if (
+    age === "young adults" &&
+    gender === "male" &&
+    categoryType === "health"
+  ) {
+    questions = maleYoungAdultsHealth;
+  } else if (
+    age === "young adults" &&
+    gender === "male" &&
+    categoryType === "ethics"
+  ) {
+    questions = maleYoungAdultsEthics;
+  } else if (
+    age === "young adults" &&
+    gender === "female" &&
+    categoryType === "personal"
+  ) {
+    questions = femaleYoungAdultsPersonal;
+  } else if (
+    age === "young adults" &&
+    gender === "female" &&
+    categoryType === "profession"
+  ) {
+    questions = femaleYoungAdultsProfession;
+  } else if (
+    age === "young adults" &&
+    gender === "female" &&
+    categoryType === "surrounding"
+  ) {
+    questions = femaleYoungAdultsSurrounding;
+  } else if (
+    age === "young adults" &&
+    gender === "female" &&
+    categoryType === "health"
+  ) {
+    questions = femaleYoungAdultsHealth;
+  } else if (
+    age === "young adults" &&
+    gender === "female" &&
+    categoryType === "ethics"
+  ) {
+    questions = femaleYoungAdultsEthics;
+  } else if (
+    age === "adults" &&
+    gender === "male" &&
+    categoryType === "personal"
+  ) {
+    questions = maleAdultsPersonal;
+  } else if (
+    age === "adults" &&
+    gender === "male" &&
+    categoryType === "profession"
+  ) {
+    questions = maleAdultsProfession;
+  } else if (
+    age === "adults" &&
+    gender === "male" &&
+    categoryType === "surrounding"
+  ) {
+    questions = maleAdultsSurrounding;
+  } else if (
+    age === "adults" &&
+    gender === "male" &&
+    categoryType === "health"
+  ) {
+    questions = maleAdultsHealth;
+  } else if (
+    age === "adults" &&
+    gender === "male" &&
+    categoryType === "ethics"
+  ) {
+    questions = maleAdultsEthics;
+  } else if (
+    age === "adults" &&
+    gender === "female" &&
+    categoryType === "personal"
+  ) {
+    questions = femaleAdultsPersonal;
+  } else if (
+    age === "adults" &&
+    gender === "female" &&
+    categoryType === "profession"
+  ) {
+    questions = femaleAdultsProfession;
+  } else if (
+    age === "adults" &&
+    gender === "female" &&
+    categoryType === "surrounding"
+  ) {
+    questions = femaleAdultsSurrounding;
+  } else if (
+    age === "adults" &&
+    gender === "female" &&
+    categoryType === "health"
+  ) {
+    questions = femaleAdultsHealth;
+  } else if (
+    age === "adults" &&
+    gender === "female" &&
+    categoryType === "ethics"
+  ) {
+    questions = femaleAdultsEthics;
+  } else if (
+    age === "middle age" &&
+    gender === "male" &&
+    categoryType === "personal"
+  ) {
+    questions = maleMiddleAgePersonal;
+  } else if (
+    age === "middle age" &&
+    gender === "male" &&
+    categoryType === "profession"
+  ) {
+    questions = maleMiddleAgeProfession;
+  } else if (
+    age === "middle age" &&
+    gender === "male" &&
+    categoryType === "surrounding"
+  ) {
+    questions = maleMiddleAgeSurrounding;
+  } else if (
+    age === "middle age" &&
+    gender === "male" &&
+    categoryType === "health"
+  ) {
+    questions = maleMiddleAgeHealth;
+  } else if (
+    age === "middle age" &&
+    gender === "male" &&
+    categoryType === "ethics"
+  ) {
+    questions = maleMiddleAgeEthics;
+  } else if (
+    age === "middle age" &&
+    gender === "female" &&
+    categoryType === "personal"
+  ) {
+    questions = femaleMiddleAgePersonal;
+  } else if (
+    age === "middle age" &&
+    gender === "female" &&
+    categoryType === "profession"
+  ) {
+    questions = femaleMiddleAgeProfession;
+  } else if (
+    age === "middle age" &&
+    gender === "female" &&
+    categoryType === "surrounding"
+  ) {
+    questions = femaleMiddleAgeSurrounding;
+  } else if (
+    age === "middle age" &&
+    gender === "female" &&
+    categoryType === "health"
+  ) {
+    questions = femaleMiddleAgeHealth;
+  } else if (
+    age === "middle age" &&
+    gender === "female" &&
+    categoryType === "ethics"
+  ) {
+    questions = femaleMiddleAgeEthics;
+  } else if (
+    age === "old age" &&
+    gender === "male" &&
+    categoryType === "personal"
+  ) {
+    questions = maleOldAgePersonal;
+  } else if (
+    age === "old age" &&
+    gender === "male" &&
+    categoryType === "profession"
+  ) {
+    questions = maleOldAgeProfession;
+  } else if (
+    age === "old age" &&
+    gender === "male" &&
+    categoryType === "surrounding"
+  ) {
+    questions = maleOldAgeSurrounding;
+  } else if (
+    age === "old age" &&
+    gender === "male" &&
+    categoryType === "health"
+  ) {
+    questions = maleOldAgeHealth;
+  } else if (
+    age === "old age" &&
+    gender === "male" &&
+    categoryType === "ethics"
+  ) {
+    questions = maleOldAgeEthics;
+  } else if (
+    age === "old age" &&
+    gender === "female" &&
+    categoryType === "personal"
+  ) {
+    questions = femaleOldAgePersonal;
+  } else if (
+    age === "old age" &&
+    gender === "female" &&
+    categoryType === "profession"
+  ) {
+    questions = femaleOldAgeProfession;
+  } else if (
+    age === "old age" &&
+    gender === "female" &&
+    categoryType === "surrounding"
+  ) {
+    questions = femaleOldAgeSurrounding;
+  } else if (
+    age === "old age" &&
+    gender === "female" &&
+    categoryType === "health"
+  ) {
+    questions = femaleOldAgeHealth;
+  } else if (
+    age === "old age" &&
+    gender === "female" &&
+    categoryType === "ethics"
+  ) {
+    questions = femaleOldAgeEthics;
   } else {
     questions = [];
   }
 
-  console.log(questions);
+  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
+  const { title, questionImage, options, question } =
+    questions[activeQuestionIndex] ?? {};
+  const [activeAnswerIndex, setActiveAnswerIndex] = useState(undefined);
+
+  const { answersGiven, setAnswersGiven } = useAnswerGivenContext();
 
   const handleSelectOption = useCallback((answerIndex, questionIndex) => {
     setAnswersGiven((prevState) => ({
@@ -61,7 +384,7 @@ export default function QuestionsAndResult({ navigation }) {
   const handleNext = useCallback(() => {
     setActiveAnswerIndex(undefined);
     if (activeQuestionIndex === questions.length - 1) {
-      return navigation.navigate("Result");
+      return navigation.navigate("Start Test");
     }
     setActiveQuestionIndex((prevState) =>
       Math.min(prevState + 1, questions.length)
