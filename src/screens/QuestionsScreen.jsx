@@ -12,7 +12,6 @@ export const QuestionsScreen = (props) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   console.log("selected answer is " + selectedAnswer);
-  
 
   return (
     <ScrollView>
@@ -20,11 +19,11 @@ export const QuestionsScreen = (props) => {
       <View className="m-2 flex-row">
         <View>
           <Image
-            className="h-12 w-10 object-contain"
+            className="h-14 w-12 object-contain"
             source={require("../../assets/images/positive-mind-logo.png")}
           />
         </View>
-        <View className="mx-2 mr-20">
+        <View className="mx-3 mr-32 justify-center">
           <View>
             <Text className="text-lg text-gray-700 font-bold">
               {props.title}
@@ -60,7 +59,7 @@ export const QuestionsScreen = (props) => {
         <RadioButton.Group
           onValueChange={(event) => {
             setSelectedAnswer((prevSelectedAnswer) => event);
-            // setCount((prevValues) => prevValues + event);
+            setCount((prevValues) => prevValues + event);
           }}
           value={selectedAnswer}
         >
@@ -70,12 +69,12 @@ export const QuestionsScreen = (props) => {
               <View className="flex-row" key={index}>
                 <RadioButton
                   value={option.value}
-                  // onPress={() => {
-                  //   props.onSelectOption(index);
-                  //   props.setActiveAnswerIndex(index);
-                  // }}
+                  onValueChange={() => {
+                    props.SelectOption(index);
+                    props.setActiveAnswerIndex(index);
+                  }}
                 />
-                <Text className="text-lg pt-0.5">{option.option}</Text>
+                <Text className="text-lg pt-0.5"> {option.option} </Text>
               </View>
             );
           })}

@@ -60,8 +60,17 @@ import { useContext } from "react";
 import { MyStoreContext } from "../Context/MyStoreContext";
 
 export default function QuestionsAndResult({ navigation }) {
-  const { gender, setGender, age, setAge, categoryType, setCategoryType } =
-    useContext(MyStoreContext);
+  const {
+    gender,
+    setGender,
+    age,
+    setAge,
+    categoryType,
+    setCategoryType,
+    completedCategory,
+    setCompletedCategory,
+  } = useContext(MyStoreContext);
+  console.log(completedCategory);
   let questions;
   if (age === "under 17" && gender === "male" && categoryType === "personal") {
     questions = maleUnderSeventeenPersonal;
@@ -371,21 +380,30 @@ export default function QuestionsAndResult({ navigation }) {
   const { answersGiven, setAnswersGiven } = useAnswerGivenContext();
 
   const handleSelectOption = useCallback((answerIndex, questionIndex) => {
+    setAnswersGiven((prevState) => {
+      const nextState = [...prevState];
+      nextState[questionIndex] = answerIndex;
+      return nextState;
+    });
+
     setAnswersGiven((prevState) => ({
       ...prevState,
       [questionIndex]: answerIndex,
     }));
   }, []);
 
+  
+  if (activeQuestionIndex === questions.length - 1) {
+    setCompletedCategory((prev) => ({ ...prev, [categoryType]: true }));
+    navigation.navigate("Start Test");
+  }
+  
   const handlePrevious = useCallback(() => {
     setActiveQuestionIndex((prevState) => Math.max(prevState - 1, 0));
   }, []);
 
   const handleNext = useCallback(() => {
     setActiveAnswerIndex(undefined);
-    if (activeQuestionIndex === questions.length - 1) {
-      return navigation.navigate("Start Test");
-    }
     setActiveQuestionIndex((prevState) =>
       Math.min(prevState + 1, questions.length)
     );

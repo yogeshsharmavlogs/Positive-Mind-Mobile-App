@@ -5,8 +5,6 @@ import { MyStoreContext } from "../Context/MyStoreContext";
 export const HomeScreen = ({ navigation }) => {
   const { gender, setGender, age, setAge, categoryType, setCategoryType } =
     useContext(MyStoreContext);
-
-  console.log();
   return (
     <>
       <View className="mx-2">
@@ -38,12 +36,12 @@ export const HomeScreen = ({ navigation }) => {
           <View className="mt-6 mx-2 flex-row">
             <View className="w-[60%]">
               <View>
-                <Text className="text-blue-900 font-bold text-lg">
-                  PMC Awareness Tool
+                <Text className="text-blue-900 font-black text-[15px]">
+                Samevdan Awareness Tool
                 </Text>
               </View>
               <View>
-                <Text className="text-gray-600 text-xs">
+                <Text className="pt-2 text-gray-600 text-xs">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
                   totam fugit labore of the name list.
                 </Text>

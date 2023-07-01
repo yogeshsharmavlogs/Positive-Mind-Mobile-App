@@ -14,10 +14,15 @@ import { useContext } from "react";
 import { MyStoreContext } from "../Context/MyStoreContext";
 
 export const DetailsScreen = ({ route, navigation }) => {
-  const { gender, setGender, age, setAge, categoryType, setCategoryType } =
-    useContext(MyStoreContext);
-
-  console.log(route.params.message);
+  const {
+    gender,
+    setGender,
+    age,
+    setAge,
+    categoryType,
+    setCategoryType,
+  } = useContext(MyStoreContext);
+  
   const [value, setValue] = useState(null);
   const genderList = [
     { label: "Male", value: "male" },
@@ -36,31 +41,14 @@ export const DetailsScreen = ({ route, navigation }) => {
           />
         </View>
 
-        <View className="my-4">
+        {/* <View className="my-4">
           <Text className="text-gray-700 font-semibold text-lg">Name</Text>
           <TextInput
             className="border rounded-md border-gray-300"
             placeholder="Enter Your Name"
           />
         </View>
-
-        <View className="">
-          <Text className="text-gray-700 font-semibold text-lg">Mobile</Text>
-          <TextInput
-            className="border rounded-md border-gray-300"
-            placeholder="Enter Your Contact Number"
-          />
-        </View>
-
-        <View className="my-4">
-          <Text className="text-gray-700 font-semibold text-lg">
-            Email (Optional)
-          </Text>
-          <TextInput
-            className="border rounded-md border-gray-300"
-            placeholder="Enter Your Email"
-          />
-        </View>
+       */}
 
         <View className="">
           <Text className="text-gray-700 font-semibold text-lg">Gender</Text>
@@ -70,7 +58,7 @@ export const DetailsScreen = ({ route, navigation }) => {
             valueField="value"
             value={value}
             onChange={(item) => {
-              setValue(item.label);
+              setValue(item.value);
               setGenderInput(item.value);
             }}
           />
@@ -109,7 +97,7 @@ export const DetailsScreen = ({ route, navigation }) => {
           </RadioButton.Group>
         </View>
 
-        <View className="my-6 items-center">
+        <View className="my-20 items-center">
           <TouchableOpacity
             onPress={() => {
               setGender(genderInput);

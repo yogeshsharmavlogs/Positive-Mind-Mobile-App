@@ -1,5 +1,6 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import { Linking } from "react-native";
+import { ScrollView, TouchableOpacity } from "react-native";
 import { Text, View, Image } from "react-native";
 
 export const PsychologicalCounsellingScreen = () => {
@@ -45,9 +46,16 @@ export const PsychologicalCounsellingScreen = () => {
                 Rs 499
               </Text>
               <Text className="text-amber-500 text-xs">Rs 449</Text>
-              <View className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-40">
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://formbuilder.ccavenue.com/live/au-small-finance-bank/positive-mind-care"
+                  )
+                }
+                className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-40"
+              >
                 <Text className="font-bold text-xs text-white">BUY</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -68,9 +76,16 @@ export const PsychologicalCounsellingScreen = () => {
                 Rs 499
               </Text>
               <Text className="text-amber-500 text-xs">Rs 999</Text>
-              <View className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-40">
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://formbuilder.ccavenue.com/live/au-small-finance-bank/positive-mind-care"
+                  )
+                }
+                className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-40"
+              >
                 <Text className="font-bold text-xs text-white">BUY</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -90,9 +105,16 @@ export const PsychologicalCounsellingScreen = () => {
                 Rs 2399
               </Text>
               <Text className="text-amber-500 text-xs">Rs 2159</Text>
-              <View className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-36">
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://formbuilder.ccavenue.com/live/au-small-finance-bank/positive-mind-care"
+                  )
+                }
+                className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-36"
+              >
                 <Text className="font-bold text-xs text-white">BUY</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -112,9 +134,16 @@ export const PsychologicalCounsellingScreen = () => {
                 Rs 5000
               </Text>
               <Text className="text-amber-500 text-xs">Rs 5000</Text>
-              <View className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-36">
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://formbuilder.ccavenue.com/live/au-small-finance-bank/positive-mind-care"
+                  )
+                }
+                className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-36"
+              >
                 <Text className="font-bold text-xs text-white">BUY</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -134,9 +163,16 @@ export const PsychologicalCounsellingScreen = () => {
                 Rs 5000
               </Text>
               <Text className="text-amber-500 text-xs">Rs 5000</Text>
-              <View className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-36">
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://formbuilder.ccavenue.com/live/au-small-finance-bank/positive-mind-care"
+                  )
+                }
+                className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-36"
+              >
                 <Text className="font-bold text-xs text-white">BUY</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>

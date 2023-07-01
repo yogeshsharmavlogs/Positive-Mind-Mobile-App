@@ -88,7 +88,7 @@ export const MeditationScreen = ({ navigation }) => {
         <View className="items-center my-6">
           <Pressable
             onPress={() =>
-              Linking.openURL("https://www.positivemindcare.com/appointments/")
+              Linking.openURL("https://calendly.com/positivemindcare/doctors-appointment")
             }
             className="bg-amber-500 w-80 h-11 rounded-full justify-center items-center"
           >

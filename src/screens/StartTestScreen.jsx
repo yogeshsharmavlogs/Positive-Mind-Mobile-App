@@ -7,9 +7,22 @@ import { MyStoreContext } from "../Context/MyStoreContext";
 import { TouchableOpacity } from "react-native";
 
 export const StartTestScreen = ({ navigation }) => {
-  const { gender, setGender, age, setAge, categoryType, setCategoryType } =
-    useContext(MyStoreContext);
+  const {
+    gender,
+    setGender,
+    age,
+    setAge,
+    categoryType,
+    setCategoryType,
+    completedCategory,
+    setCompletedCategory,
+  } = useContext(MyStoreContext);
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const check = Object.values(completedCategory).length;
+  const test = Object.values(completedCategory).filter((item) =>
+    Boolean(item)
+  ).length;
 
   return (
     <ScrollView className="m-2">
@@ -32,22 +45,22 @@ export const StartTestScreen = ({ navigation }) => {
           </View>
         </View>
       </View>
-
       {/* Second Box  */}
-
       <View className="my-4 mx-20">
         <Text className="text-xl text-center font-semibold text-gray-700">
           You will be tested by these categories
         </Text>
       </View>
-
       {/* Third Box   */}
-
       <View>
         <View className="flex-row justify-center gap-x-4">
           <TouchableOpacity
             onPress={() => setSelectedCategory("personal")}
-            className="w-[41%] rounded-lg border border-slate-300 bg-white py-2"
+            className={
+              completedCategory.personal === true
+                ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
+                : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
+            }
           >
             <View className="items-center">
               <Image
@@ -64,7 +77,11 @@ export const StartTestScreen = ({ navigation }) => {
 
           <TouchableOpacity
             onPress={() => setSelectedCategory("profession")}
-            className="w-[41%] rounded-lg border border-slate-300 bg-white"
+            className={
+              completedCategory.profession === true
+                ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
+                : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
+            }
           >
             <View className="items-center py-2">
               <Image
@@ -83,7 +100,11 @@ export const StartTestScreen = ({ navigation }) => {
         <View className="flex-row justify-center gap-x-4 my-4">
           <TouchableOpacity
             onPress={() => setSelectedCategory("surrounding")}
-            className="w-[41%] rounded-lg border border-slate-300 bg-white py-2"
+            className={
+              completedCategory.surrounding === true
+                ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
+                : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
+            }
           >
             <View className="items-center">
               <Image
@@ -100,7 +121,11 @@ export const StartTestScreen = ({ navigation }) => {
 
           <TouchableOpacity
             onPress={() => setSelectedCategory("health")}
-            className="w-[41%] rounded-lg border border-slate-300 bg-white"
+            className={
+              completedCategory.health === true
+                ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
+                : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
+            }
           >
             <View className="items-center py-2">
               <Image
@@ -119,7 +144,11 @@ export const StartTestScreen = ({ navigation }) => {
         <View className="items-center">
           <TouchableOpacity
             onPress={() => setSelectedCategory("ethics")}
-            className="w-[41%] rounded-lg border border-slate-300 bg-white py-2"
+            className={
+              completedCategory.ethics === true
+                ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
+                : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
+            }
           >
             <View className="items-center py-2">
               <Image
@@ -135,20 +164,83 @@ export const StartTestScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-
       {/* Button  */}
+      <View>
+        {test === 1 ? (
+          <Text className="mt-3 text-center font-medium text-slate-600">
+            "Congratulations on completing the first section of the tests!
+            You're off to a great start”
+          </Text>
+        ) : undefined}
 
-      <View className="my-10 items-center">
-        <TouchableOpacity
-          onPress={() => {
-            setCategoryType(selectedCategory);
-            navigation.navigate("QuestionsAndResultScreen");
-          }}
-          className="bg-amber-500 w-40 h-10 rounded-full justify-center items-center"
-        >
-          <Text className="text-white text-lg font-bold">Start Test</Text>
-        </TouchableOpacity>
+        {test === 2 ? (
+          <Text className="mt-3 text-center font-medium text-slate-600">
+            "Fantastic job! You've successfully conquered the second section of
+            the tests”
+          </Text>
+        ) : undefined}
+
+        {test === 3 ? (
+          <Text className="mt-3 text-center font-medium text-slate-600">
+            "Great work! You've triumphed over the challenges of the third
+            section”
+          </Text>
+        ) : null}
+
+        {test === 4 ? (
+          <Text className="mt-3 text-center font-medium text-slate-600">
+            "Outstanding achievement! The completion of the fourth section marks
+            another milestone in your journey of success”
+          </Text>
+        ) : null}
+
+        {test === 5 ? (
+          <Text className="mt-3 text-center font-medium text-slate-600">
+            "Congratulations, you've done it! Completion of the final section
+            marks the triumphant conclusion of your tests”
+          </Text>
+        ) : undefined}
       </View>
+
+      <View className="items-center mt-4">
+        <View className="w-24 h-10 bg-teal-100 rounded-full justify-center">
+          <Text className="text-center text-lg font-extrabold text-teal-700">
+            {test} / {check}
+          </Text>
+        </View>
+      </View>
+
+      {completedCategory.personal === true &&
+      completedCategory.profession === true &&
+      completedCategory.surrounding === true &&
+      completedCategory.ethics === true &&
+      completedCategory.health === true ? (
+        <View className="my-6 items-center">
+          <TouchableOpacity
+            onPress={() => {
+              setCategoryType(selectedCategory);
+              navigation.navigate("Information");
+            }}
+            className="bg-amber-500 w-72 h-11 rounded-full justify-center items-center"
+          >
+            <Text className="text-white text-lg font-bold">
+              Proceed to view result
+            </Text>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        <View className="my-6 items-center">
+          <TouchableOpacity
+            onPress={() => {
+              setCategoryType(selectedCategory);
+              navigation.navigate("QuestionsAndResultScreen");
+            }}
+            className="bg-amber-500 w-48 h-11 rounded-full justify-center items-center"
+          >
+            <Text className="text-white text-lg font-bold">Start Test</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </ScrollView>
   );
 };

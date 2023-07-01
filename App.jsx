@@ -20,6 +20,7 @@ import QuestionsAndResult from "./src/screens/QuestionAndResultScreen";
 import { ResultScreen } from "./src/screens/ResultScreeen";
 import { AnswerGivenProvider } from "./src/Context/AnswerGivenContext";
 import { CountProvider } from "./src/Context/UseCountContext";
+import { Information } from "./src/screens/Information";
 
 const ThemeContext = React.createContext("light");
 
@@ -30,6 +31,13 @@ const App = () => {
   const [gender, setGender] = useState("Male");
   const [age, setAge] = useState(null);
   const [categoryType, setCategoryType] = useState(null);
+  const [completedCategory, setCompletedCategory] = useState({
+    personal: false,
+    profession: false,
+    surrounding: false,
+    health: false,
+    ethics: false,
+  });
 
   return (
     <>
@@ -41,45 +49,51 @@ const App = () => {
           setAge,
           categoryType,
           setCategoryType,
+          completedCategory,
+          setCompletedCategory,
         }}
       >
         <AnswerGivenProvider>
-        <CountProvider>
-          <StatusBar className="auto" />
+          <CountProvider>
+            <StatusBar className="auto" />
 
-          <NavigationContainer>
-            <Stack.Navigator>
-              <Stack.Screen name="Login" component={LoginScreen} />
-              <Stack.Screen name="Home" component={HomeScreen} />
-              <Stack.Screen
-                name="Clinical Treatment"
-                component={ClinicalTreatmentScreen}
-              />
-              <Stack.Screen
-                name="Psychological Counselling"
-                component={PsychologicalCounsellingScreen}
-              />
-              <Stack.Screen name="Mindfulness" component={MindfulnessScreen} />
-              <Stack.Screen name="Yoga" component={YogaScreen} />
-              <Stack.Screen name="Meditation" component={MeditationScreen} />
-              <Stack.Screen
-                name="Mobile D-Addiction"
-                component={MobileAddictionScreen}
-              />
-              <Stack.Screen name="Details" component={DetailsScreen} />
-              <Stack.Screen name="Start Test" component={StartTestScreen} />
-              <Stack.Screen name="Questions" component={QuestionsScreen} />
-              <Stack.Screen
-                name="QuestionsAndResultScreen"
-                component={QuestionsAndResult}
-              />
-              <Stack.Screen
-                name="Book Appointment"
-                component={BookAppointmentScreen}
-              />
-              <Stack.Screen name="Result" component={ResultScreen} />
-            </Stack.Navigator>
-          </NavigationContainer>
+            <NavigationContainer>
+              <Stack.Navigator>
+                <Stack.Screen name="login" component={LoginScreen} options={{headerShown: false}} />
+                <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen
+                  name="Clinical Treatment"
+                  component={ClinicalTreatmentScreen}
+                />
+                <Stack.Screen
+                  name="Psychological Counselling"
+                  component={PsychologicalCounsellingScreen}
+                />
+                <Stack.Screen
+                  name="Mindfulness"
+                  component={MindfulnessScreen}
+                />
+                <Stack.Screen name="Yoga" component={YogaScreen} />
+                <Stack.Screen name="Meditation" component={MeditationScreen} />
+                <Stack.Screen
+                  name="Mobile D-Addiction"
+                  component={MobileAddictionScreen}
+                />
+                <Stack.Screen name="Details" component={DetailsScreen} />
+                <Stack.Screen name="Start Test" component={StartTestScreen} />
+                <Stack.Screen name="Questions" component={QuestionsScreen} />
+                <Stack.Screen
+                  name="QuestionsAndResultScreen"
+                  component={QuestionsAndResult}
+                />
+                <Stack.Screen
+                  name="Book Appointment"
+                  component={BookAppointmentScreen}
+                />
+                <Stack.Screen name="Information" component={Information} />
+                <Stack.Screen name="Result" component={ResultScreen} />
+              </Stack.Navigator>
+            </NavigationContainer>
           </CountProvider>
         </AnswerGivenProvider>
       </MyStoreContext.Provider>
