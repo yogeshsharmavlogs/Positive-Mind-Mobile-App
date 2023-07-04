@@ -37,7 +37,7 @@ export const HomeScreen = ({ navigation }) => {
             <View className="w-[60%]">
               <View>
                 <Text className="text-blue-900 font-black text-[15px]">
-                Samevdan Awareness Tool
+                  Samevdan Awareness Tool
                 </Text>
               </View>
               <View>
@@ -49,7 +49,7 @@ export const HomeScreen = ({ navigation }) => {
               <View className="my-3">
                 <TouchableOpacity
                   onPress={() =>
-                    navigation.navigate("Details", {
+                    navigation.navigate("Result", {
                       message: "hello world",
                     })
                   }

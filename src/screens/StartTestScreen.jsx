@@ -1,7 +1,7 @@
-import React from "react";
+import * as React from "react";
+// import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
-import { Pressable } from "react-native";
 import { Text, View, Image, ScrollView } from "react-native";
 import { MyStoreContext } from "../Context/MyStoreContext";
 import { TouchableOpacity } from "react-native";
@@ -18,6 +18,8 @@ export const StartTestScreen = ({ navigation }) => {
     setCompletedCategory,
   } = useContext(MyStoreContext);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [hasClicked, setHasClicked] = useState(false);
+
 
   const check = Object.values(completedCategory).length;
   const test = Object.values(completedCategory).filter((item) =>
@@ -55,29 +57,36 @@ export const StartTestScreen = ({ navigation }) => {
       <View>
         <View className="flex-row justify-center gap-x-4">
           <TouchableOpacity
-            onPress={() => setSelectedCategory("personal")}
+            onPress={() => {
+              setHasClicked(true);
+              setSelectedCategory("personal");
+            }}
             className={
+              (selectedCategory === "personal" && "opacity-95") ||
               completedCategory.personal === true
                 ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
                 : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
             }
           >
-            <View className="items-center">
-              <Image
-                className="h-16 w-16"
-                source={require("../../assets/images/startTest/personal.png")}
-              />
-            </View>
-            <View className="mx-6 mt-2">
-              <Text className="text-center text-gray-600 font-black">
-                Personal, social Family & Relationship
-              </Text>
+            <View>
+              <View className="items-center">
+                <Image
+                  className="h-16 w-16"
+                  source={require("../../assets/images/startTest/personal.png")}
+                />
+              </View>
+              <View className="mx-6 mt-2">
+                <Text className="text-center text-gray-600 font-black">
+                  Personal, social Family & Relationship
+                </Text>
+              </View>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => setSelectedCategory("profession")}
             className={
+              (selectedCategory === "profession" && "opacity-40") ||
               completedCategory.profession === true
                 ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
                 : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
@@ -101,6 +110,7 @@ export const StartTestScreen = ({ navigation }) => {
           <TouchableOpacity
             onPress={() => setSelectedCategory("surrounding")}
             className={
+              (selectedCategory === "surrounding" && "opacity-40") ||
               completedCategory.surrounding === true
                 ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
                 : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
@@ -122,6 +132,7 @@ export const StartTestScreen = ({ navigation }) => {
           <TouchableOpacity
             onPress={() => setSelectedCategory("health")}
             className={
+              (selectedCategory === "health" && "opacity-40") ||
               completedCategory.health === true
                 ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
                 : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"
@@ -145,6 +156,7 @@ export const StartTestScreen = ({ navigation }) => {
           <TouchableOpacity
             onPress={() => setSelectedCategory("ethics")}
             className={
+              (selectedCategory === "ethics" && "opacity-40") ||
               completedCategory.ethics === true
                 ? "w-[41%] rounded-lg border border-slate-400 bg-emerald-100 opacity-50"
                 : "w-[41%] rounded-lg border border-slate-300 bg-white py-2"

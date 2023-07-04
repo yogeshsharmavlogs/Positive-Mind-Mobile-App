@@ -3,23 +3,28 @@ import { Linking, ScrollView, TouchableOpacity } from "react-native";
 import { Pressable } from "react-native";
 import { Text, Image, View } from "react-native";
 import { useCountContext } from "../Context/UseCountContext";
-// import { QuestionsScreen } from "./QuestionsScreen";
+import { MyStoreContext } from "../Context/MyStoreContext";
+import { useContext } from "react";
 
 export const ResultScreen = () => {
   const { count } = useCountContext();
+  const { completedCategory, setCompletedCategory } =
+    useContext(MyStoreContext);
+
   console.log(count);
   return (
     <>
-      <ScrollView className="m-2">
-        <View>
+      <ScrollView className="m-2 bg-white">
+        {/* <View>
           <View className="items-center my-2">
             <Image
               className="h-20 w-20 object-contain"
               source={require("../../assets/images/positive-mind-logo.png")}
             />
           </View>
+
           <View className="my-2 bg-rose-50 rounded-lg border border-slate-400">
-            {count >= 32 ? (
+            {completedCategory.personal === true && count >= 32 ? (
               <>
                 <View className="m-2">
                   <Text className="my-2 text-gray-600 font-bold text-xl">
@@ -55,6 +60,9 @@ export const ResultScreen = () => {
                 </View>
               </>
             ) : null}
+
+
+            
 
             {count >= 24 && count <= 31 ? (
               <>
@@ -177,7 +185,158 @@ export const ResultScreen = () => {
               </>
             ) : null}
           </View>
+        </View> */}
+        <View className="h-20 items-center my-2">
+          <Image
+            className="h-full w-20"
+            source={require("../../assets/images/positive-mind-logo.png")}
+          />
         </View>
+        <View className="my-4">
+          <View className="h-40 rounded-xl bg-yellow-50 border border-slate-300">
+            <View className="mx-3 my-2">
+              <Text className="font-semibold text-lg text-gray-600">
+                Personal
+              </Text>
+              <Text className="mt-2 text-xs leading-5 text-slate-600">
+                "Your personal well-being plays a significant role in your
+                mental health. Consider taking time for self-care activities,
+                such as engaging in hobbies, spending time with loved ones, and
+                practicing self-compassion."
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        <View className="my-4">
+          <View className="h-40 rounded-xl bg-rose-50 border border-slate-300">
+            <View className="mx-3 my-2">
+              <Text className="font-semibold text-lg text-gray-600">
+                Proffesional
+              </Text>
+              <Text className="mt-2 text-xs leading-5 text-slate-600">
+                "Your work or career may be impacting your mental health. It
+                could be helpful to assess your work-life balance, set realistic
+                goals, and consider seeking support or resources to manage
+                workplace stress."
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        <View className="my-4">
+          <View className="h-40 rounded-xl bg-pink-50 border border-slate-300">
+            <View className="mx-3 my-2">
+              <Text className="font-semibold text-lg text-gray-600">
+                Surrounding
+              </Text>
+              <Text className="mt-2 text-xs leading-5 text-slate-600">
+                "Your environment and the people you surround yourself with can
+                significantly influence your mental health. Consider creating a
+                supportive network, setting healthy boundaries, and seeking
+                environments that promote your well-being."
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        <View className="my-4">
+          <View className="h-40 rounded-xl bg-pifuchsia-50 border border-slate-300">
+            <View className="mx-3 my-2">
+              <Text className="font-semibold text-lg text-gray-600">
+                Health
+              </Text>
+              <Text className="mt-2 text-xs leading-5 text-slate-600">
+                "Physical health and mental well-being are interconnected.
+                Prioritizing regular exercise, maintaining a balanced diet, and
+                ensuring sufficient sleep can positively influence your mental
+                health."
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        <View className="my-4">
+          <View className="h-40 rounded-xl bg-blue-50 border border-slate-300">
+            <View className="mx-3 my-2">
+              <Text className="font-semibold text-lg text-gray-600">
+                Ethics
+              </Text>
+              <Text className="mt-2 text-xs leading-5 text-slate-600">
+                "Ethical considerations can impact your mental well-being.
+                Reflecting on your values, practicing integrity, and cultivating
+                healthy relationships built on trust and respect can contribute
+                to your overall sense of fulfillment."
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        <View className="my-5">
+          <Text className="text-gray-800 text-lg font-extrabold lead">
+            Overall
+          </Text>
+        </View>
+
+        <View className="h-40 rounded-xl bg-[#FFFBEB] border border-[#D1D5DB] mt-6">
+          <View className="mx-3 my-2">
+            <Text className="font-semibold text text-gray-700">PMC Learn</Text>
+            <Text className="text-xs mt-2 mr-10 text-gray-800">
+              Enrich yourself with a 24*7 access to 5000+ minutes of curated,
+              well researched self-help content that includes videos, audio,
+              blogs and more.
+            </Text>
+            <Text className="text-gray-800 font-bold text-xs mt-2">
+              Single Report Fees.
+            </Text>
+            <View className="flex-row gap-x-3 mt-2">
+              <Text className="line-through text-gray-400 text-xs font-semibold">
+                Rs 499
+              </Text>
+              <Text className="text-amber-500 text-xs">Rs 999</Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://formbuilder.ccavenue.com/live/au-small-finance-bank/positive-mind-care"
+                  )
+                }
+                className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-40"
+              >
+                <Text className="font-bold text-xs text-white">BUY</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+
+        <View className="h-40 rounded-xl bg-[#FDF2F8] border border-[#D1D5DB] mt-6 mb-6">
+          <View className="mx-3 my-2">
+            <Text className="font-semibold text text-gray-700">PMC Buddy</Text>
+            <Text className="text-xs mt-2 mr-10 text-gray-800">
+              We aim to provide a non-judgmental, anonymous, virtual space that
+              connects you to a professional expert buddy anytime, anywhere.
+            </Text>
+            <Text className="text-gray-800 font-bold text-xs mt-2">
+              One Time Pay.
+            </Text>
+            <View className="flex-row gap-x-3 mt-2">
+              <Text className="line-through text-gray-400 text-xs font-semibold">
+                Rs 2399
+              </Text>
+              <Text className="text-amber-500 text-xs">Rs 2159</Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://formbuilder.ccavenue.com/live/au-small-finance-bank/positive-mind-care"
+                  )
+                }
+                className="h-7 w-16 bg-amber-500 items-center justify-center rounded-[100px] left-36"
+              >
+                <Text className="font-bold text-xs text-white">BUY</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+
       </ScrollView>
     </>
   );
