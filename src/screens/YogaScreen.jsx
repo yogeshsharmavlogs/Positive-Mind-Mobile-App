@@ -5,7 +5,7 @@ import { Linking } from "react-native";
 
 export const YogaScreen = ({ navigation }) => {
   return (
-    <ScrollView className="mx-2">
+    <ScrollView className="px-2 bg-white">
       {/* First Block -----: */}
       <View className="m-2 flex-row">
         <View>
@@ -16,11 +16,13 @@ export const YogaScreen = ({ navigation }) => {
         </View>
         <View className="mx-2">
           <View>
-            <Text className="text-lg text-gray-700 font-bold">Mindfulness</Text>
+            <Text className="text-base text-gray-700 font-bold">
+              Positive Mind Care & Research Centre
+            </Text>
           </View>
           <View>
             <Text className="text-gray-400">
-              Lorem ipsum dolor sit amet consectetur sit.
+              Be Positive with Positive Mind Care
             </Text>
           </View>
         </View>
@@ -35,11 +37,10 @@ export const YogaScreen = ({ navigation }) => {
       </View>
       <View className="mt-4">
         <Text className="text-center text-gray-700 leading-5 mx-4">
-          Lorem ipsum dolor sit amet consectetur. Sed integer purus pellentesque
-          mauris sed placerat egestas. Velit massa ac massa eu massa.
-          Ullamcorper consequat donec eu quis facilisis nulla vulputate euismod
-          cursus. Est luctus sed eros vulputate. Iaculis in euismod nulla vitae
-          dui nulla auctor.
+          Yoga is a holistic practice combining physical postures, breath
+          control, and meditation for mind-body wellness and spiritual growth.
+          Yoga is a discipline integrating breath, movement, and meditation to
+          promote physical, mental, and spiritual well-being.
         </Text>
       </View>
 
@@ -80,15 +81,20 @@ export const YogaScreen = ({ navigation }) => {
             Yoga
           </Text>
           <Text className="my-2 text-gray-400 text-center">
-            Lorem ipsum dolor sit amet consectetur sit. Lorem ipsum dolor sit
-            amet consectetur sit.Lorem ipsum dolor sit amet consectetur sit.
-            consectetur sit.Lorem ipsum dolor sit amet consectetur sit.
+            Physical postures, breath control, meditation, mind-body connection,
+            flexibility, strength, relaxation, stress reduction, mindfulness,
+            holistic wellness, , self-discovery, inner peace, spiritual growth.
+            It integrates the body and mind, fostering holistic well-being,
+            improved mental clarity, and a deeper connection to oneself and the
+            surrounding world.
           </Text>
         </View>
         <View className="items-center my-6">
           <Pressable
             onPress={() =>
-              Linking.openURL("https://calendly.com/positivemindcare/doctors-appointment")
+              Linking.openURL(
+                "https://calendly.com/positivemindcare/doctors-appointment"
+              )
             }
             className="bg-amber-500 w-80 h-11 rounded-full justify-center items-center"
           >

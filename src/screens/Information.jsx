@@ -7,7 +7,7 @@ export const Information = ({ navigation }) => {
   const handleSubmit = async (values) => {
     const user = await createUser(values.email, values.contactNumber);
   };
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   return (
     <>
       <View className="m-2">
@@ -45,17 +45,17 @@ export const Information = ({ navigation }) => {
             activeUnderlineColor="orange"
             underlineColor="purple"
             textColor="orange"
-            onChangeText={newText => setText(newText)}
+            onChangeText={(newText) => setText(newText)}
             defaultValue={text}
           />
         </View>
-        <View className="mt-6">
+        {/* <View className="mt-6">
           <Text className=" text-center text-slate-600 font-bold text-xl">
             Please Pay 499 to View Result
           </Text>
-        </View>
+        </View> */}
         <View className="my-8 items-center">
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() =>
               Linking.openURL(
                 "https://formbuilder.ccavenue.com/live/au-small-finance-bank/positive-mind-care"
@@ -64,7 +64,7 @@ export const Information = ({ navigation }) => {
             className="bg-amber-500 w-32 h-11 rounded-full justify-center items-center"
           >
             <Text className="text-white text-lg font-bold">Pay</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           <TouchableOpacity
             onPress={() => navigation.navigate("Result")}

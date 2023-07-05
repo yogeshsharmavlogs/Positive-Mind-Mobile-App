@@ -33,7 +33,7 @@ export const DetailsScreen = ({ route, navigation }) => {
   const [genderInput, setGenderInput] = useState(null);
   return (
     <>
-      <ScrollView className="m-2" scrollEnabled={true}>
+      <ScrollView className="p-2 bg-white" scrollEnabled={true}>
         <View className="h-20 items-center">
           <Image
             className="h-full w-20"

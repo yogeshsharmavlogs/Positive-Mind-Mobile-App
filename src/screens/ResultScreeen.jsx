@@ -212,7 +212,7 @@ export const ResultScreen = () => {
           <View className="h-40 rounded-xl bg-rose-50 border border-slate-300">
             <View className="mx-3 my-2">
               <Text className="font-semibold text-lg text-gray-600">
-                Proffesional
+                Professional
               </Text>
               <Text className="mt-2 text-xs leading-5 text-slate-600">
                 "Your work or career may be impacting your mental health. It
@@ -336,7 +336,6 @@ export const ResultScreen = () => {
             </View>
           </View>
         </View>
-
       </ScrollView>
     </>
   );

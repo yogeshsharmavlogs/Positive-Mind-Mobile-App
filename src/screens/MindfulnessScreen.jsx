@@ -4,7 +4,7 @@ import { Text, View, Image, ScrollView } from "react-native";
 
 export const MindfulnessScreen = ({ navigation }) => {
   return (
-    <ScrollView className="mx-2">
+    <ScrollView className="px-2 bg-white">
       {/* First Block -----: */}
       <View className="m-2 flex-row">
         <View>
@@ -15,11 +15,11 @@ export const MindfulnessScreen = ({ navigation }) => {
         </View>
         <View className="mx-2">
           <View>
-            <Text className="text-lg text-gray-700 font-bold">Mindfulness</Text>
+            <Text className="text-base text-gray-700 font-bold"> Positive Mind Care & Research Centre</Text>
           </View>
           <View>
-            <Text className="text-gray-400">
-              Lorem ipsum dolor sit amet consectetur sit.
+            <Text className="mx-1 text-gray-400">
+            Be Positive with Positive Mind Care
             </Text>
           </View>
         </View>
@@ -34,11 +34,11 @@ export const MindfulnessScreen = ({ navigation }) => {
       </View>
       <View className="mt-4">
         <Text className="text-center text-gray-700 leading-5 mx-4">
-          Lorem ipsum dolor sit amet consectetur. Sed integer purus pellentesque
-          mauris sed placerat egestas. Velit massa ac massa eu massa.
-          Ullamcorper consequat donec eu quis facilisis nulla vulputate euismod
-          cursus. Est luctus sed eros vulputate. Iaculis in euismod nulla vitae
-          dui nulla auctor.
+          Mindfulness is a practice that involves paying deliberate attention to
+          the present moment with an attitude of openness, curiosity, and
+          non-judgment. It is the quality of being fully engaged and aware of
+          one's thoughts, feelings, bodily sensations, and the surrounding
+          environment.
         </Text>
       </View>
 

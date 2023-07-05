@@ -5,7 +5,7 @@ import { Text, View, Image } from "react-native";
 
 export const PsychologicalCounsellingScreen = () => {
   return (
-    <ScrollView className="mx-2">
+    <ScrollView className="px-2 bg-white h-full">
       {/* First Block -----: */}
       <View className="m-2 flex-row">
         <View>
@@ -16,13 +16,13 @@ export const PsychologicalCounsellingScreen = () => {
         </View>
         <View className="mx-2">
           <View>
-            <Text className="text-lg text-gray-700 font-bold">
-              Psychological Counseliing
+            <Text className="text-base text-gray-700 font-bold">
+              Positive Mind Care & Research Centre
             </Text>
           </View>
           <View>
             <Text className="text-gray-400">
-              Lorem ipsum dolor sit amet consectetur sit.
+              Be Positive with Positive Mind Care
             </Text>
           </View>
         </View>

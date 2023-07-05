@@ -20,7 +20,6 @@ export const StartTestScreen = ({ navigation }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [hasClicked, setHasClicked] = useState(false);
 
-
   const check = Object.values(completedCategory).length;
   const test = Object.values(completedCategory).filter((item) =>
     Boolean(item)
@@ -38,11 +37,13 @@ export const StartTestScreen = ({ navigation }) => {
         </View>
         <View className="mx-2">
           <View>
-            <Text className="text-lg text-gray-700 font-bold">Mindfulness</Text>
+            <Text className="text-base text-gray-700 font-bold">
+              Positive Mind Care & Research Centre
+            </Text>
           </View>
           <View>
             <Text className="text-gray-400">
-              Lorem ipsum dolor sit amet consectetur sit.
+              Be Positive with Positive Mind Care
             </Text>
           </View>
         </View>

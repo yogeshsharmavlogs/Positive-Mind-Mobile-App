@@ -1,5 +1,12 @@
 import { useContext } from "react";
-import { Text, View, Image, Pressable, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  Pressable,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import { MyStoreContext } from "../Context/MyStoreContext";
 
 export const HomeScreen = ({ navigation }) => {
@@ -7,7 +14,7 @@ export const HomeScreen = ({ navigation }) => {
     useContext(MyStoreContext);
   return (
     <>
-      <View className="mx-2">
+      <ScrollView className="px-2 mt-8 bg-white h-full">
         {/* First Block -----: */}
         <View className="m-2 flex-row">
           <View>
@@ -18,13 +25,13 @@ export const HomeScreen = ({ navigation }) => {
           </View>
           <View className="mx-2">
             <View>
-              <Text className="text-lg text-gray-700 font-bold">
-                Hello Yogesh Sharma
+              <Text className="text-base text-gray-700 font-bold text-center">
+                Positive Mind Care & Research Centre
               </Text>
             </View>
             <View>
               <Text className="text-gray-400">
-                Lorem ipsum dolor sit amet consectetur sit.
+                Be Positive with Positive Mind Care
               </Text>
             </View>
           </View>
@@ -37,19 +44,19 @@ export const HomeScreen = ({ navigation }) => {
             <View className="w-[60%]">
               <View>
                 <Text className="text-blue-900 font-black text-[15px]">
-                  Samevdan Awareness Tool
+                  Samvedan Awareness Tool
                 </Text>
               </View>
               <View>
                 <Text className="pt-2 text-gray-600 text-xs">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-                  totam fugit labore of the name list.
+                  Samvedan serves as a reminder to slow down, observe, and
+                  capture a particular experience.
                 </Text>
               </View>
               <View className="my-3">
                 <TouchableOpacity
                   onPress={() =>
-                    navigation.navigate("Result", {
+                    navigation.navigate("Details", {
                       message: "hello world",
                     })
                   }
@@ -71,22 +78,22 @@ export const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Third Block -----: */}
-        <View className="mt-6">
+        <View className="mt-6 mb-2">
           <View>
-            <Text className="text-gray-700 text-base font-semibold">
+            <Text className="text-center text-gray-700 text-2xl font-semibold">
               Our Services
             </Text>
           </View>
-          <View>
+          {/* <View>
             <Text className="text-gray-400 font-normal text-xs">
               Lorem ipsum dolor sit amet consectetur sit.
             </Text>
-          </View>
+          </View> */}
         </View>
 
         {/* Fourth Block -----: */}
 
-        <View className="my-3 flex-row gap-x-3">
+        {/* <View className="my-3 flex-row gap-x-3">
           <TouchableOpacity
             onPress={() => navigation.navigate("Clinical Treatment")}
             className="h-24 w-[30%] rounded-md border border-gray-200"
@@ -137,8 +144,61 @@ export const HomeScreen = ({ navigation }) => {
               </Text>
             </View>
           </TouchableOpacity>
+        </View> */}
+
+        <View className="mt-3 items-center gap-y-5">
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Clinical Treatment")}
+            className="h-36 w-[100%] rounded-lg border border-gray-300"
+          >
+            <View className="h-[70%]">
+              <Image
+                className="h-full w-full"
+                source={require("../../assets/images/OurServices/clinical-treatment.png")}
+              />
+            </View>
+            <View className="text-center">
+              <Text className="my-2 w-full font-medium text-center text-gray-700 text-[16px]">
+                Clinical Treatment
+              </Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Psychological Counselling")}
+            className="h-36 w-[100%] rounded-md border border-gray-300"
+          >
+            <View className="h-[70%]">
+              <Image
+                className="h-full w-full"
+                source={require("../../assets/images/OurServices/physchological-counselling.png")}
+              />
+            </View>
+            <View className="text-center">
+              <Text className="my-2 font-medium text-center text-gray-700 text-[16px]">
+                Psychological Counselling
+              </Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Mindfulness")}
+            className="h-36 w-[100%] rounded-md border border-gray-300"
+          >
+            <View className="h-[70%]">
+              <Image
+                className="h-full w-full"
+                source={require("../../assets/images/OurServices/mindfulness.png")}
+              />
+            </View>
+            <View className="text-center">
+              <Text className="my-2 font-medium text-center text-gray-700 text-[16px]">
+                Mindfulness
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     </>
   );
 };

@@ -5,7 +5,7 @@ import { Text, View, Image, ScrollView } from "react-native";
 
 export const MeditationScreen = ({ navigation }) => {
   return (
-    <ScrollView className="mx-2">
+    <ScrollView className="px-2 bg-white">
       {/* First Block -----: */}
       <View className="m-2 flex-row">
         <View>
@@ -16,11 +16,13 @@ export const MeditationScreen = ({ navigation }) => {
         </View>
         <View className="mx-2">
           <View>
-            <Text className="text-lg text-gray-700 font-bold">Mindfulness</Text>
+            <Text className="text-base text-gray-700 font-bold">
+              Positive Mind Care & Research Centre
+            </Text>
           </View>
           <View>
             <Text className="text-gray-400">
-              Lorem ipsum dolor sit amet consectetur sit.
+              Be Positive with Positive Mind Care
             </Text>
           </View>
         </View>
@@ -35,11 +37,12 @@ export const MeditationScreen = ({ navigation }) => {
       </View>
       <View className="mt-4">
         <Text className="text-center text-gray-700 leading-5 mx-4">
-          Lorem ipsum dolor sit amet consectetur. Sed integer purus pellentesque
-          mauris sed placerat egestas. Velit massa ac massa eu massa.
-          Ullamcorper consequat donec eu quis facilisis nulla vulputate euismod
-          cursus. Est luctus sed eros vulputate. Iaculis in euismod nulla vitae
-          dui nulla auctor.
+          Meditation is a practice that involves focusing one's attention and
+          eliminating the stream of thoughts to achieve a calm and clear state
+          of mind. It has been used for centuries to promote relaxation, reduce
+          stress, enhance self-awareness, and improve overall well-being.
+          Regular meditation practice can have numerous mental, emotional, and
+          physical benefits.
         </Text>
       </View>
 
@@ -80,15 +83,18 @@ export const MeditationScreen = ({ navigation }) => {
             Meditation
           </Text>
           <Text className="my-2 text-gray-400 text-center">
-            Lorem ipsum dolor sit amet consectetur sit. Lorem ipsum dolor sit
-            amet consectetur sit.Lorem ipsum dolor sit amet consectetur sit.
-            consectetur sit.Lorem ipsum dolor sit amet consectetur sit.
+            Meditation is a practice of training the mind to achieve a state of
+            focused attention, relaxation, and inner peace. It cultivates
+            mindfulness, reduces stress, and enhances self-awareness and
+            emotional well-being.
           </Text>
         </View>
         <View className="items-center my-6">
           <Pressable
             onPress={() =>
-              Linking.openURL("https://calendly.com/positivemindcare/doctors-appointment")
+              Linking.openURL(
+                "https://calendly.com/positivemindcare/doctors-appointment"
+              )
             }
             className="bg-amber-500 w-80 h-11 rounded-full justify-center items-center"
           >

@@ -4,7 +4,7 @@ import { Text, View, Image, ScrollView } from "react-native";
 
 export const MobileAddictionScreen = ({ navigation }) => {
   return (
-    <ScrollView className="mx-2">
+    <ScrollView className="px-2 bg-white">
       {/* First Block -----: */}
       <View className="m-2 flex-row">
         <View>
@@ -15,11 +15,13 @@ export const MobileAddictionScreen = ({ navigation }) => {
         </View>
         <View className="mx-2">
           <View>
-            <Text className="text-lg text-gray-700 font-bold">Mindfulness</Text>
+            <Text className="text-base text-gray-700 font-bold">
+              Positive Mind Care & Research Centre
+            </Text>
           </View>
           <View>
             <Text className="text-gray-400">
-              Lorem ipsum dolor sit amet consectetur sit.
+              Be Positive with Positive Mind Care
             </Text>
           </View>
         </View>
@@ -34,11 +36,12 @@ export const MobileAddictionScreen = ({ navigation }) => {
       </View>
       <View className="mt-4">
         <Text className="text-center text-gray-700 leading-5 mx-4">
-          Lorem ipsum dolor sit amet consectetur. Sed integer purus pellentesque
-          mauris sed placerat egestas. Velit massa ac massa eu massa.
-          Ullamcorper consequat donec eu quis facilisis nulla vulputate euismod
-          cursus. Est luctus sed eros vulputate. Iaculis in euismod nulla vitae
-          dui nulla auctor.
+          Mobile phone addiction refers to excessive and compulsive use of
+          mobile devices, leading to negative impacts on physical and mental
+          health, social relationships, and daily functioning. It can result in
+          decreased productivity, sleep disturbances, anxiety, and a
+          disconnection from real-life experiences. Seeking balance and mindful
+          technology use is crucial.
         </Text>
       </View>
 
@@ -79,25 +82,26 @@ export const MobileAddictionScreen = ({ navigation }) => {
             Mobile D-Addiction
           </Text>
           <Text className="my-2 text-gray-400 text-center">
-            Lorem ipsum dolor sit amet consectetur sit. Lorem ipsum dolor sit
-            amet consectetur sit.Lorem ipsum dolor sit amet consectetur sit.
-            consectetur sit.Lorem ipsum dolor sit amet consectetur sit.
+            Mobile phone addiction: Excessive use, dependency, withdrawal
+            symptoms, neglecting responsibilities, decreased productivity,
+            disrupted sleep, social isolation, anxiety, depression, distraction,
+            impaired relationships, nomophobia, compulsive checking,
           </Text>
         </View>
         <View className="items-center my-6">
-        <Pressable
-                onPress={() =>
-                  Linking.openURL(
-                    "https://calendly.com/positivemindcare/doctors-appointment"
-                  )
-                }
-                className="bg-amber-500 w-80 h-11 rounded-full justify-center items-center"
-              >
-                <Text className="text-white text-lg font-bold">
-                  Book Appointment
-                </Text>
-              </Pressable>
-              </View>
+          <Pressable
+            onPress={() =>
+              Linking.openURL(
+                "https://calendly.com/positivemindcare/doctors-appointment"
+              )
+            }
+            className="bg-amber-500 w-80 h-11 rounded-full justify-center items-center"
+          >
+            <Text className="text-white text-lg font-bold">
+              Book Appointment
+            </Text>
+          </Pressable>
+        </View>
       </View>
     </ScrollView>
   );
