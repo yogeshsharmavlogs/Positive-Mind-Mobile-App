@@ -1,34 +1,31 @@
 {
   "expo": {
-    "name": "myFirstApp",
-    "slug": "myFirstApp",
+    "name": "Positive Mind Care",
+    "slug": "PositiveMindCare",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/favicon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/favicon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.rohitsaini9.myFirstApp"
+      "package": "com.rohitsaini9.PositiveMindCare"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "5040f266-1bf3-4339-b6fe-10e5abe20354"
-      }
     },
     "plugins": [
       [
@@ -42,6 +39,11 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0fc17814-8ff7-4b14-a25e-3fff888f2e00"
+      }
+    }
   }
 }
