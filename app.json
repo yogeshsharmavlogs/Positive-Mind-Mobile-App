@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Positive Mind Care",
-    "slug": "PositiveMindCare",
+    "name": "myFirstApp",
+    "slug": "myFirstApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,10 +19,29 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.rohitsaini9.myFirstApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5040f266-1bf3-4339-b6fe-10e5abe20354"
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.6.10",
+            "compileSdkVersion": 31,
+            "targetSdkVersion": 31,
+            "buildToolsVersion": "31.0.0"
+          }
+        }
+      ]
+    ]
   }
 }
