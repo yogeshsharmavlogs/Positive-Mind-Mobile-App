@@ -10744,7 +10744,6 @@ export const femaleOldAgeEthics = [
 ];
 
 export function getResult(questions, answersGiven) {
-  console.log(questions, answersGiven);
   let count = 0;
   for (const [questionIndex, answerIndex] of Object.entries(answersGiven)) {
     if (questions[questionIndex].answer === answerIndex) {

@@ -11,7 +11,6 @@ export const ResultScreen = () => {
   const { completedCategory, setCompletedCategory } =
     useContext(MyStoreContext);
 
-  console.log(count);
   return (
     <>
       {count >= 38 ? (

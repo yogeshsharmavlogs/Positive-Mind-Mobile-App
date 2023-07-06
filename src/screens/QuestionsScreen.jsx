@@ -4,14 +4,10 @@ import { maleUnderSeventeenPersonal } from "../utils";
 import { RadioButton } from "react-native-paper";
 import { useAnswerGivenContext } from "../Context/AnswerGivenContext";
 import { useCountContext } from "../Context/UseCountContext";
-import { useState } from "react";
-import { useEffect } from "react";
 
 export const QuestionsScreen = (props) => {
   const { setCount } = useCountContext();
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-
-  console.log("selected answer is " + selectedAnswer);
+  const { answersGiven, setAnswersGiven } = useAnswerGivenContext();
 
   return (
     <ScrollView>
@@ -38,14 +34,14 @@ export const QuestionsScreen = (props) => {
       {/* Question Numbers  */}
       <View className="my-2">
         <Text className="text-gray-700 font-bold text-xl text-center">
-          {props.index + 1}/{maleUnderSeventeenPersonal.length}
+          {props.activeQuestionIndex + 1}/{maleUnderSeventeenPersonal.length}
         </Text>
       </View>
       {/* Question Title  */}
       <View className="flex-row">
         <View className="mx-2">
           <Text className="text-gray-700 font-bold text-lg">
-            {props.index + 1}.
+            {props.activeQuestionIndex + 1}.
           </Text>
         </View>
         <View className="mr-10 pr-3">
@@ -57,23 +53,27 @@ export const QuestionsScreen = (props) => {
       {/* Options  */}
       <View className="mx-2">
         <RadioButton.Group
-          onValueChange={(event) => {
-            setSelectedAnswer((prevSelectedAnswer) => event);
-            setCount((prevValues) => prevValues + event);
+          onValueChange={(value) => {
+            setCount((prevValues) => prevValues + 1);
+
+            setAnswersGiven((prevValues) => ({
+              ...prevValues,
+              [props.categoryType]: {
+                ...prevValues[props.categoryType],
+                [props.activeQuestionIndex]: value,
+              },
+            }));
           }}
-          value={selectedAnswer}
+          value={
+            answersGiven[props.categoryType]?.[
+              props.activeQuestionIndex?.toString()
+            ] ?? undefined
+          }
         >
           {props.options.map((option, index) => {
-            console.log(option);
             return (
               <View className="flex-row" key={index}>
-                <RadioButton
-                  value={option.value}
-                  onValueChange={() => {
-                    props.SelectOption(index);
-                    props.setActiveAnswerIndex(index);
-                  }}
-                />
+                <RadioButton value={option.value} />
                 <Text className="text-lg pt-0.5"> {option.option} </Text>
               </View>
             );
