@@ -14,7 +14,7 @@ export const ResultScreen = () => {
   console.log(count);
   return (
     <>
-      {count >= 32 ? (
+      {count >= 38 ? (
         <>
           <ScrollView className="m-2 bg-white">
             {/* <View>
@@ -203,9 +203,10 @@ export const ResultScreen = () => {
 
                   <Text className="mt-2 text-xs leading-5 text-slate-600">
                     "Your personal well-being plays a significant role in your
-                    mental health. Consider taking time for self-care
-                    activities, such as engaging in hobbies, spending time with
-                    loved ones, and practicing self-compassion."
+                    mental health.Your interpersonal relations with friends and
+                    family may be unsatisfactory, indicating that there is room
+                    for improvement in fostering stronger connections, which can
+                    hinder your personal growth."
                   </Text>
                 </View>
               </View>
@@ -219,9 +220,10 @@ export const ResultScreen = () => {
                   </Text>
                   <Text className="mt-2 text-xs leading-5 text-slate-600">
                     "Your work or career may be impacting your mental health. It
-                    could be helpful to assess your work-life balance, set
-                    realistic goals, and consider seeking support or resources
-                    to manage workplace stress."
+                    may seem like you struggle to use your time effectively
+                    while attempting to complete work tasks. Through a
+                    combination of mindfulness psychiatric help in the form of
+                    counselling, therapy, or other treatments.
                   </Text>
                 </View>
               </View>
@@ -235,9 +237,10 @@ export const ResultScreen = () => {
                   </Text>
                   <Text className="mt-2 text-xs leading-5 text-slate-600">
                     "Your environment and the people you surround yourself with
-                    can significantly influence your mental health. Consider
-                    creating a supportive network, setting healthy boundaries,
-                    and seeking environments that promote your well-being."
+                    can significantly influence your mental health. Furthermore,
+                    the public spaces in your area may be neglected and unclean,
+                    failing to fulfil their potential for community
+                    utilisation."
                   </Text>
                 </View>
               </View>
@@ -252,8 +255,9 @@ export const ResultScreen = () => {
                   <Text className="mt-2 text-xs leading-5 text-slate-600">
                     "Physical health and mental well-being are interconnected.
                     Prioritizing regular exercise, maintaining a balanced diet,
-                    and ensuring sufficient sleep can positively influence your
-                    mental health."
+                    and Taking steps towards a more active lifestyle and
+                    adopting healthier dietary habits, contribute to long-term
+                    improvements in your well-being."
                   </Text>
                 </View>
               </View>
@@ -267,9 +271,10 @@ export const ResultScreen = () => {
                   </Text>
                   <Text className="mt-2 text-xs leading-5 text-slate-600">
                     "Ethical considerations can impact your mental well-being.
-                    Reflecting on your values, practicing integrity, and
-                    cultivating healthy relationships built on trust and respect
-                    can contribute to your overall sense of fulfillment."
+                    Reflecting on your values, practicing integrity, Currently,
+                    you may find yourself lacking a strong belief system and a
+                    sense of purpose, which can leave you feeling adrift and
+                    uncertain."
                   </Text>
                 </View>
               </View>
@@ -313,24 +318,24 @@ export const ResultScreen = () => {
               </View>
             </View>
 
-            <View className="h-40 rounded-xl bg-[#FDF2F8] border border-[#D1D5DB] mt-6 mb-6">
+            <View className="h-40 rounded-xl bg-[#F0FDF4] border border-[#D1D5DB] mt-6">
               <View className="mx-3 my-2">
                 <Text className="font-semibold text text-gray-700">
-                  PMC Buddy
+                  PMC Talk
                 </Text>
                 <Text className="text-xs mt-2 mr-10 text-gray-800">
-                  We aim to provide a non-judgmental, anonymous, virtual space
-                  that connects you to a professional expert buddy anytime,
-                  anywhere.
+                  100% Confidential, Antonymous and Reliable therapeutic
+                  counselling through certified psychologists. Each session of
+                  max 45 mins each.
                 </Text>
                 <Text className="text-gray-800 font-bold text-xs mt-2">
                   One Time Pay.
                 </Text>
                 <View className="flex-row gap-x-3 mt-2">
                   <Text className="line-through text-gray-400 text-xs font-semibold">
-                    Rs 2399
+                    Rs 5000
                   </Text>
-                  <Text className="text-amber-500 text-xs">Rs 2159</Text>
+                  <Text className="text-amber-500 text-xs">Rs 5000</Text>
                   <TouchableOpacity
                     onPress={() =>
                       Linking.openURL(
@@ -348,7 +353,7 @@ export const ResultScreen = () => {
         </>
       ) : null}
 
-      {count >= 22 && count <= 31 ? (
+      {count >= 22 && count <= 38 ? (
         <>
           <ScrollView className="m-2 bg-white">
             {/* <View>
