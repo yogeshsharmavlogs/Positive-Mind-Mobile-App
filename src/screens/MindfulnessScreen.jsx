@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable } from "react-native";
+import { Pressable, TouchableOpacity } from "react-native";
 import { Text, View, Image, ScrollView } from "react-native";
 
 export const MindfulnessScreen = ({ navigation }) => {
@@ -15,11 +15,14 @@ export const MindfulnessScreen = ({ navigation }) => {
         </View>
         <View className="mx-2">
           <View>
-            <Text className="text-base text-gray-700 font-bold"> Positive Mind Care & Research Centre</Text>
+            <Text className="text-base text-gray-700 font-bold">
+              {" "}
+              Positive Mind Care & Research Centre
+            </Text>
           </View>
           <View>
             <Text className="mx-1 text-gray-400">
-            Be Positive with Positive Mind Care
+              Be Positive with Positive Mind Care
             </Text>
           </View>
         </View>
@@ -43,7 +46,7 @@ export const MindfulnessScreen = ({ navigation }) => {
       </View>
 
       <View className="mt-8 flex-row gap-x-8">
-        <Pressable
+        <TouchableOpacity
           onPress={() => navigation.navigate("Yoga")}
           className="h-28 w-[40%] rounded-md"
         >
@@ -53,8 +56,8 @@ export const MindfulnessScreen = ({ navigation }) => {
               source={require("../../assets/images/mindfulness/yoga.png")}
             />
           </View>
-        </Pressable>
-        <Pressable
+        </TouchableOpacity>
+        <TouchableOpacity
           onPress={() => navigation.navigate("Meditation")}
           className="h-28 w-[40%] rounded-md"
         >
@@ -64,10 +67,10 @@ export const MindfulnessScreen = ({ navigation }) => {
               source={require("../../assets/images/mindfulness/meditation.png")}
             />
           </View>
-        </Pressable>
+        </TouchableOpacity>
       </View>
       <View className="gap-x-8">
-        <Pressable
+        <TouchableOpacity
           onPress={() => navigation.navigate("Mobile D-Addiction")}
           className="mt-4 h-28 w-[40%] rounded-md"
         >
@@ -77,7 +80,7 @@ export const MindfulnessScreen = ({ navigation }) => {
               source={require("../../assets/images/mindfulness/mobileAddiction.png")}
             />
           </View>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
