@@ -21,6 +21,7 @@ import { ResultScreen } from "./src/screens/ResultScreeen";
 import { AnswerGivenProvider } from "./src/Context/AnswerGivenContext";
 import { CountProvider } from "./src/Context/UseCountContext";
 import { Information } from "./src/screens/Information";
+import { UserProfile } from "./src/screens/UserProfile";
 
 const ThemeContext = React.createContext("light");
 
@@ -59,9 +60,9 @@ const App = () => {
 
             <NavigationContainer>
               <Stack.Navigator>
-                {/* <Stack.Screen name="login" component={LoginScreen} options={{headerShown: false}} /> */}
+                <Stack.Screen name="login" component={LoginScreen} options={{ headerShown: false }} />
                 <Stack.Screen
-                  name=" "
+                  name="Home"
                   component={HomeScreen}
                   options={{ headerShown: false }}
                 />
@@ -96,6 +97,7 @@ const App = () => {
                 />
                 <Stack.Screen name="Information" component={Information} />
                 <Stack.Screen name="Result" component={ResultScreen} />
+                <Stack.Screen name="Profile" component={UserProfile} />
               </Stack.Navigator>
             </NavigationContainer>
           </CountProvider>

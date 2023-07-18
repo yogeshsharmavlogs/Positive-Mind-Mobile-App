@@ -148,7 +148,7 @@ export const PsychologicalCounsellingScreen = () => {
           </View>
         </View>
 
-        <View className="h-40 rounded-xl bg-[#F0FDF4] border border-[#D1D5DB] mt-6">
+        {/* <View className="h-40 rounded-xl bg-[#F0FDF4] border border-[#D1D5DB] mt-6">
           <View className="mx-3 my-2">
             <Text className="font-semibold text text-gray-700">PMC Talk</Text>
             <Text className="text-xs mt-2 mr-10 text-gray-800">
@@ -175,7 +175,7 @@ export const PsychologicalCounsellingScreen = () => {
               </TouchableOpacity>
             </View>
           </View>
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   );

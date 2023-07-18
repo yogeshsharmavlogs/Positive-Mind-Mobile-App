@@ -16,7 +16,6 @@ export const MindfulnessScreen = ({ navigation }) => {
         <View className="mx-2">
           <View>
             <Text className="text-base text-gray-700 font-bold">
-              {" "}
               Positive Mind Care & Research Centre
             </Text>
           </View>
